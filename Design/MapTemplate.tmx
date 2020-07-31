@@ -1,18 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.4" tiledversion="1.4.0" orientation="orthogonal" renderorder="right-down" width="11" height="14" tilewidth="100" tileheight="100" infinite="0" nextlayerid="2" nextobjectid="1">
+<map version="1.4" tiledversion="1.4.0" orientation="orthogonal" renderorder="right-down" width="11" height="14" tilewidth="100" tileheight="100" infinite="0" nextlayerid="4" nextobjectid="1">
  <editorsettings>
-  <export target="../Game/SciFiShooter/Assets/Resources/Map/map_1_1.json" format="json"/>
+  <export target="../Game/SciFiShooter/Assets/Resources_moved/Map/map_1_1.json" format="json"/>
  </editorsettings>
  <tileset firstgid="1" source="TileSet/MapTile1.json"/>
+ <tileset firstgid="3" source="TileSet/Enemy.json"/>
  <layer id="1" name="Tile Layer 1" width="11" height="14">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,
+0,0,1,0,0,0,0,1,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,1,1,1,1,1,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,
+0,0,2,2,2,0,0,2,2,2,0,
 0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,
-1,1,0,1,0,0,0,1,0,1,1,
+0,0,0,0,0,2,0,0,0,0,0,
+0,0,0,0,0,2,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="2" name="Wave1" width="11" height="14">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,4,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="3" name="Wave2" width="11" height="14" visible="0">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,
+0,3,0,0,0,3,0,0,0,3,0,
+0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,
