@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:Foldout text="Control" name="Control" value="false" style="width: auto; border-left-color: rgba(0, 0, 0, 255); border-right-color: rgba(0, 0, 0, 255); border-top-color: rgba(0, 0, 0, 255); border-bottom-color: rgba(0, 0, 0, 255); border-left-width: 2px; border-right-width: 2px; border-top-width: 2px; border-bottom-width: 2px; background-color: rgba(188, 231, 182, 255); margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px;">
+        <Style src="/Assets/UI/Uss/ButtonCustom.uss" />
+        <uie:Toolbar style="justify-content: center; flex-direction: row; width: auto; background-color: rgba(203, 203, 203, 0);">
+            <ui:Button text="Delete" name="btnDelete" class="buttonCustom btnDelete" />
+            <ui:Button text="Clone" name="btnClone" class="buttonCustom btnClone" />
+            <ui:Button text="Swap" name="btnSwap" class="buttonCustom btnSwap" />
+        </uie:Toolbar>
+    </ui:Foldout>
+</ui:UXML>

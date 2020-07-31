@@ -20,6 +20,9 @@ namespace QuickType
         [JsonProperty("compressionlevel")]
         public int Compressionlevel { get; set; }
 
+        [JsonProperty("editorsettings")]
+        public Editorsettings Editorsettings { get; set; }
+
         [JsonProperty("height")]
         public int Height { get; set; }
 
@@ -61,6 +64,21 @@ namespace QuickType
 
         [JsonProperty("width")]
         public int Width { get; set; }
+    }
+
+    public partial class Editorsettings
+    {
+        [JsonProperty("export")]
+        public Export Export { get; set; }
+    }
+
+    public partial class Export
+    {
+        [JsonProperty("format")]
+        public string Format { get; set; }
+
+        [JsonProperty("target")]
+        public string Target { get; set; }
     }
 
     public partial class Layer
@@ -107,15 +125,15 @@ namespace QuickType
 
     public partial class MapDefine
     {
-        public static MapDefine FromJson(string json) => JsonConvert.DeserializeObject<MapDefine>(json, QuickType.Converter.Settings);
+        public static MapDefine FromJson(string json) => JsonConvert.DeserializeObject<MapDefine>(json, QuickType.MapDefineConverter.Settings);
     }
 
-    public static class Serialize
+    public static class MapDefineSerialize
     {
-        public static string ToJson(this MapDefine self) => JsonConvert.SerializeObject(self, QuickType.Converter.Settings);
+        public static string ToJson(this MapDefine self) => JsonConvert.SerializeObject(self, QuickType.MapDefineConverter.Settings);
     }
 
-    internal static class Converter
+    internal static class MapDefineConverter
     {
         public static readonly JsonSerializerSettings Settings = new JsonSerializerSettings
         {

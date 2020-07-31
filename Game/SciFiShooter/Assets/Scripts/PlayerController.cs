@@ -5,7 +5,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    Renderer stepQuad;
+    FootStepRenderer stepQuad;
+
+    [SerializeField]
+    BaseBullet baseBullePrefab;
+
+    [SerializeField] ParticleSystem bulletMuzzleFx;
 
     [SerializeField]
     Transform leftLegPoint;
@@ -28,23 +33,38 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private PlayerAnimationController animator;
 
-    
-
     [SerializeField]
     private float stepDistance = 0f;
 
+    [SerializeField]
+    Transform bulletEmitter;
+
     Vector3 offsetStep = new Vector3(0, 0.02f, 0);
 
-    PoolObject poolObject = new PoolObject();
+
+    PoolObject<FootStepRenderer> poolObject = new PoolObject<FootStepRenderer>();
+    PoolObject<BaseBullet> poolBulletObject = new PoolObject<BaseBullet>();
+
     float moveTimePoint = 0;
     int stepCount = 0;
+    float attackSpeed = 0.3f;
+    float lastShootTimePoint = 0;
+
+    EnemyController focusingEnemy = null;
 
     public Rigidbody Rigidbody { get { if (rigidbody == null) rigidbody = GetComponent<Rigidbody>(); return rigidbody; } }
 
+    public BoxCollider HitBox;
 
     private void Start()
     {
-        poolObject.CreatePool(stepQuad.gameObject, 10);
+        poolObject.CreatePool(stepQuad, 10);
+        poolBulletObject.CreatePool(baseBullePrefab, 100);
+    }
+
+    private void Update()
+    {
+      
     }
 
     void FixedUpdate()
@@ -65,6 +85,9 @@ public class PlayerController : MonoBehaviour
         if (running)
         {
             Move(h, v);
+
+            if (focusingEnemy) focusingEnemy.enemyRenderState.SetActiveHighLightFx(false,Color.red);
+            focusingEnemy = null;
             animator.Shooting = false;
 
             if (moveTimePoint == 0 || Time.time - moveTimePoint > stepDistance)
@@ -75,14 +98,48 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            animator.Shooting = true;
             moveTimePoint = 0;
             stepCount = 0;
+            Shoot();
         }
         animator.Running = running;
         
     }
 
+    public void Shoot()
+    {
+        if (Time.time - lastShootTimePoint < attackSpeed)
+            return;
+        if (focusingEnemy && !focusingEnemy.Alive) focusingEnemy = null;
+        var nearestEnemy = focusingEnemy?focusingEnemy : Map.Instance.GetNearestEnemy(this.transform.position);
+        if (nearestEnemy != null)
+        {
+            focusingEnemy = nearestEnemy;
+            bulletMuzzleFx.Play();
+            this.transform.LookAt(nearestEnemy.hitBox.transform);
+            bulletEmitter.transform.LookAt(nearestEnemy.hitBox.transform);
+            BaseBullet bullet = poolBulletObject.GetNextObject();
+            bullet.Damage = 10;
+            bullet.InitData();
+            Vector3 dir = nearestEnemy.hitBox.transform.position - bulletEmitter.position;
+            bullet.Shot(this.bulletEmitter.position, dir.normalized);
+            animator.Shooting = true;
+
+            focusingEnemy.enemyRenderState.SetActiveHighLightFx(true,Color.red);
+        }
+        else
+        {
+            animator.Shooting = false;
+            animator.Running = false;
+        }
+        lastShootTimePoint = Time.time;
+    }
+
+
+    public void OnHit(long dame)
+    {
+        Debug.LogError(string.Format("On Get Hit Dame {0}", dame));
+    }
 
     void Move(float h, float v)
     {      
@@ -122,8 +179,8 @@ public class PlayerController : MonoBehaviour
 
         if (raycastHit.collider)
         {
-            GameObject step = poolObject.GetNextObject();
-            step.GetComponent<FootStepRenderer>().SetVisible();
+            FootStepRenderer step = poolObject.GetNextObject();
+            step.SetVisible();
             step.transform.position = raycastHit.point + offsetStep;
             step.transform.localEulerAngles = new Vector3(90, this.transform.localEulerAngles.y, 0);
         }

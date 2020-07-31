@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:ScrollView mode="Horizontal" show-horizontal-scroller="false" horizontal-page-size="20" name="ScrollView" />
+    <ui:VisualElement name="ActionBar" style="flex-direction: row;">
+        <ui:Button text="Add" name="Add" />
+    </ui:VisualElement>
+</ui:UXML>

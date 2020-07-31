@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 3186e7448fc5456408cbaecfdf4f24d0
+  m_SerializeEntries:
+  - m_GUID: 07339ecab2f95184c95a6c4234f15723
+    m_Address: BugBulletTemplate
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: 1d81111997edae14b88f9f42a118b004
+    m_Address: EnemyTile
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3b84c00a3ac371047af091b71fbf7fd4
+    m_Address: BulletNormal
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 42685acaeef251840b1630ea3bf473ce
+    m_Address: Map1Tile
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: 545a1765f9fb2214e85e74895ae6db0a
+    m_Address: map_1_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 704ccfa59912b3b41ad4d5301d5cab9c
+    m_Address: MapTile
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7f74fade8f312a448950ac57bf61eaa3
+    m_Address: SpaceManEnemy
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: abe507f89c59fa645bf4f839b4713941
+    m_Address: BugEnemy
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: efec434d3b578e24aa06e89290040ef6
+    m_Address: BugBullet
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 92e51ced52efa2d4e92daf78ae04174f, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 2e7a4342ac3f62e418e3a35a2e8b460a, type: 2}
+    - {fileID: 11400000, guid: fd0725c609f30a546b3034d3913e3800, type: 2}

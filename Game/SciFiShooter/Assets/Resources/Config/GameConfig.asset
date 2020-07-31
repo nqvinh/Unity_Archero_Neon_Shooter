@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6678707429394965267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b04e859fa3380b42add3da01259ca33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 54583aed-c8c7-4fa8-a9c4-1c133a5fe58b
+  configName: BugEnemy
+  maxHP: 10
+  dame: 0
+  attackRange: 4
+  attackSpeed: 0
+  moveSpeed: 0
+  aimToTarget: 1
+  idleLogic: 1
+  idleParams: 0.3
+  moveLogic: 1
+  moveParams: 
+  attackLogic: 1
+  attackParams: 
+  deadLogic: 0
+  deadParams: 1.5,5
+--- !u!114 &-4487655169605993160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b04e859fa3380b42add3da01259ca33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 128afc1a-5642-486e-9334-6dd77d4fb30b
+  configName: SpaceMan
+  maxHP: 10
+  dame: 0
+  attackRange: 10
+  attackSpeed: 0
+  moveSpeed: 0
+  aimToTarget: 0
+  idleLogic: 0
+  idleParams: 
+  moveLogic: 0
+  moveParams: 
+  attackLogic: 1
+  attackParams: 
+  deadLogic: 0
+  deadParams: 1.5,5
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6bb88971e8412d43855dbb2d44f480e, type: 3}
+  m_Name: GameConfig
+  m_EditorClassIdentifier: 
+  enemyConfigs:
+  - {fileID: -6678707429394965267}
+  - {fileID: -4487655169605993160}

@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:Template name="ControlToolBar" src="ControlToolBar.uxml" />
+    <ui:VisualElement name="Container" style="justify-content: flex-start; background-image: url(&apos;/Assets/ExampleAssets/Textures/Metal/Metal_MetallicSmoothness.tif&apos;); border-left-width: 5px; border-right-width: 5px; border-top-width: 5px; border-bottom-width: 5px; margin-left: 4px; margin-right: 4px; margin-top: 4px; margin-bottom: 4px; width: 350px;" />
+    <ui:Instance template="ControlToolBar" name="ControlToolBar" style="width: 350px;" />
+</ui:UXML>

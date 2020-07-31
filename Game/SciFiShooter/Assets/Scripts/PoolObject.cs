@@ -2,38 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PoolObject 
+public class PoolObject<T> where T:MonoBehaviour 
 {
-    List<GameObject> poolObjs = new List<GameObject>();
+    List<T> poolObjs = new List<T>();
     int currentPoolCursor = 0;
-    GameObject refPrefab = null;
+    T refPrefab;
     Transform poolParent = null;
 
-    public void CreatePool(GameObject prefab, int initNumber,System.Action<GameObject> cbAfterCreateObject = null, Transform parent = null)
+    public bool IsReady { get { return poolObjs.Count > 0; } }
+
+    public void CreatePool(T prefab, int initNumber,System.Action<T> cbAfterCreateObject = null, Transform parent = null)
     {
         poolParent = parent;
         refPrefab = prefab;
         currentPoolCursor = 0;
         for (int i=0;i<initNumber;++i)
         {
-            GameObject go = GameObject.Instantiate(prefab);
-            go.SetActive(false);
+            T go = GameObject.Instantiate(prefab);
+            go.gameObject.SetActive(false);
             poolObjs.Add(go);
             go.transform.SetParent(parent);
-            //DontDestroyOnLoad(go);
             Object.DontDestroyOnLoad(go);
             if (cbAfterCreateObject!= null)
                 cbAfterCreateObject(go);
         }
     }
 
-    public GameObject GetNextObject()
+    public T GetNextObject()
     {
         int poolCount = poolObjs.Count;
-        GameObject res = null;
+        T res = null ;
         for (int i=currentPoolCursor;i<poolCount;++i)
         {
-            if (poolObjs[i].activeSelf == false)
+            if (poolObjs[i].gameObject.activeSelf == false)
             {
                 currentPoolCursor++;
                 if (currentPoolCursor == poolCount - 1)

@@ -18,34 +18,34 @@ namespace QuickType
     public partial class MapTile
     {
         [JsonProperty("columns")]
-        public int Columns { get; set; }
+        public long Columns { get; set; }
 
         [JsonProperty("grid")]
         public Grid Grid { get; set; }
 
         [JsonProperty("margin")]
-        public int Margin { get; set; }
+        public long Margin { get; set; }
 
         [JsonProperty("name")]
         public string Name { get; set; }
 
         [JsonProperty("spacing")]
-        public int Spacing { get; set; }
+        public long Spacing { get; set; }
 
         [JsonProperty("tilecount")]
-        public int Tilecount { get; set; }
+        public long Tilecount { get; set; }
 
         [JsonProperty("tiledversion")]
         public string Tiledversion { get; set; }
 
         [JsonProperty("tileheight")]
-        public int Tileheight { get; set; }
+        public long Tileheight { get; set; }
 
         [JsonProperty("tiles")]
         public Tile[] Tiles { get; set; }
 
         [JsonProperty("tilewidth")]
-        public int Tilewidth { get; set; }
+        public long Tilewidth { get; set; }
 
         [JsonProperty("type")]
         public string Type { get; set; }
@@ -62,28 +62,28 @@ namespace QuickType
     public partial class Grid
     {
         [JsonProperty("height")]
-        public int Height { get; set; }
+        public long Height { get; set; }
 
         [JsonProperty("orientation")]
         public string Orientation { get; set; }
 
         [JsonProperty("width")]
-        public int Width { get; set; }
+        public long Width { get; set; }
     }
 
     public partial class Tile
     {
         [JsonProperty("id")]
-        public int Id { get; set; }
+        public long Id { get; set; }
 
         [JsonProperty("image")]
         public string Image { get; set; }
 
         [JsonProperty("imageheight")]
-        public int Imageheight { get; set; }
+        public long Imageheight { get; set; }
 
         [JsonProperty("imagewidth")]
-        public int Imagewidth { get; set; }
+        public long Imagewidth { get; set; }
     }
 
     public partial class MapTile
