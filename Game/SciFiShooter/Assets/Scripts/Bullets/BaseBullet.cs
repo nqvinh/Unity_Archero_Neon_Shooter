@@ -63,6 +63,7 @@ public class BaseBullet : MonoBehaviour
         bulletMovementUpdater.baseSpeed = this.speed;
         isShooting = false;
         hasExplosion = false;
+        StartCoroutine(ResetTrailComponent());
     }
 
     public virtual void InitData(BulletTemplate bulletTemplate,BulletEmitter bulletEmitter)
@@ -85,6 +86,22 @@ public class BaseBullet : MonoBehaviour
         bulletMovementUpdater.jumpDistance = bulletTemplate.BulletProperties.JumpDistance;
         isShooting = false;
         hasExplosion = false;
+        StartCoroutine(ResetTrailComponent());
+    }
+
+    private IEnumerator ResetTrailComponent()
+    {
+        TrailRenderer[] trail = GetComponentsInChildren<TrailRenderer>();
+        int trailCount = trail.Length;
+        float trailTime = 0;
+        for (int i=0;i<trailCount;++i)
+        {
+            trailTime = trail[i].time;
+            trail[i].Clear();
+            trail[i].time= 0;
+            yield return new WaitForEndOfFrame();
+            trail[i].time=trailTime;
+        }
     }
 
     //public virtual void Shot(HeroController hero, MobController target,Transform beginPos)

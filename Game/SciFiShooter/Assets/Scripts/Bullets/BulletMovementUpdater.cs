@@ -94,7 +94,11 @@ public class MoveForward : BulletMovementUpdater
     {
         bullet.transform.position += bullet.transform.forward * baseSpeed * Time.smoothDeltaTime;
         if (origin)
+        {
             bullet.transform.RotateAround(origin.position, bullet.transform.up, sprialSpeed);
+            bullet.transform.LookAt(bullet.transform.position);
+        }
+            
         
     }
 }

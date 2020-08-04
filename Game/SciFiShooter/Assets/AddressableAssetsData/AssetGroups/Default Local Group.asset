@@ -22,6 +22,10 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - default
+  - m_GUID: 0f4725666845eaf44a23116aea05671e
+    m_Address: BossMec
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   - m_GUID: 1d81111997edae14b88f9f42a118b004
     m_Address: EnemyTile
     m_ReadOnly: 0
@@ -35,8 +39,16 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - default
+  - m_GUID: 4f4baae75fd21c24aa34fcb982a5ab1d
+    m_Address: BossMec
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   - m_GUID: 545a1765f9fb2214e85e74895ae6db0a
     m_Address: map_1_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 608b38a5089e695448575a8a4c531cfc
+    m_Address: PlayerNormalBullet
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 704ccfa59912b3b41ad4d5301d5cab9c
@@ -47,8 +59,24 @@ MonoBehaviour:
     m_Address: SpaceManEnemy
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 85ab1bca1383d4547af227af62d28e70
+    m_Address: BossMec2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8bf685b5460ddf74280a2ffb32f03828
+    m_Address: BulletSpray
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 907906ac217d68c48acab4d42c63a1b9
+    m_Address: BossMecBullet
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   - m_GUID: abe507f89c59fa645bf4f839b4713941
     m_Address: BugEnemy
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: df98a928ef982a5499d7c48069b7e75c
+    m_Address: BulletDirection
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: efec434d3b578e24aa06e89290040ef6
@@ -56,6 +84,10 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - default
+  - m_GUID: fa7d55b05206b7842a39e479c9aa42a6
+    m_Address: BulletTemplate
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 92e51ced52efa2d4e92daf78ae04174f, type: 2}
   m_SchemaSet:

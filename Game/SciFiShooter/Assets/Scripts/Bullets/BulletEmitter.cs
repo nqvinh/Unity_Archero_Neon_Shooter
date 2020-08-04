@@ -141,7 +141,7 @@ public class BulletSprayShot : IBulletTypeShotHandler
             }
             else
             {
-                bullet.Shot(emitter.transform.position, -dir);
+                bullet.Shot(emitter.transform.position, dir);
             }
                 
             angle += angleEach;
@@ -201,9 +201,9 @@ public class BulletTemplateShot : IBulletTypeShotHandler
 
             BaseBullet bullet = emitter.bulletPool.GetNextObject().GetComponent<BaseBullet>();
             bullet.transform.position = pos;
-            bullet.transform.forward = -emitter.transform.forward;
+            bullet.transform.forward = emitter.transform.forward;
             Vector3 dir = bullet.transform.forward;
-            dir = Quaternion.Euler(0, -bulletData.Properties.Template[i].Dir , 0) * dir;
+            dir = Quaternion.Euler(0, bulletData.Properties.Template[i].Dir , 0) * dir;
 
             bullet.InitData(bulletTemplate,emitter);
 

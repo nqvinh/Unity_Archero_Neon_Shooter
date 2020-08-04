@@ -4,7 +4,7 @@
      "export":
         {
          "format":"",
-         "target":"."
+         "target":"..\/..\/..\/..\/..\/Design\/TileSet"
         }
     },
  "grid":
@@ -16,20 +16,26 @@
  "margin":0,
  "name":"Enemy",
  "spacing":0,
- "tilecount":2,
+ "tilecount":3,
  "tiledversion":"1.4.0",
  "tileheight":157,
  "tiles":[
         {
          "id":0,
-         "image":"Enemy\/BugEnemy.png",
+         "image":"..\/..\/..\/..\/..\/Design\/TileSet\/Enemy\/BugEnemy.png",
          "imageheight":157,
          "imagewidth":100
         }, 
         {
          "id":1,
-         "image":"Enemy\/SpaceManEnemy.png",
+         "image":"..\/..\/..\/..\/..\/Design\/TileSet\/Enemy\/SpaceManEnemy.png",
          "imageheight":141,
+         "imagewidth":100
+        }, 
+        {
+         "id":2,
+         "image":"..\/..\/..\/..\/..\/Design\/TileSet\/Enemy\/BossMec.png",
+         "imageheight":130,
          "imagewidth":100
         }],
  "tilewidth":100,

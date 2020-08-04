@@ -116,8 +116,10 @@ public class EnemyAttackByBulletTemplate : EnemyAttackBehaviour
         if (!hasShoot && bulletEmitter.CanShot)
         {
             hasShoot = true;
-            bulletEmitter.Shot(enemyController.target.HitBox.transform);
+            if (enemyController.enemyConfigRef.refEnemyConfig.aimToTarget)     
+                bulletEmitter.Shot(enemyController.target.HitBox.transform);
+            else
+                bulletEmitter.Shot(null);
         }
     }
 }
-

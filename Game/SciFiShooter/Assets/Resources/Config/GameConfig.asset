@@ -1,5 +1,33 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8692357913099652105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b04e859fa3380b42add3da01259ca33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 321fd735-2d89-47da-af7f-ea5fefdfad92
+  configName: BossMec
+  maxHP: 100
+  dame: 0
+  attackRange: 10
+  attackSpeed: 0
+  moveSpeed: 0
+  aimToTarget: 0
+  idleLogic: 1
+  idleParams: 
+  moveLogic: 1
+  moveParams: 
+  attackLogic: 1
+  attackParams: 
+  deadLogic: 0
+  deadParams: 1.5,5
 --- !u!114 &-6678707429394965267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14,9 +42,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 54583aed-c8c7-4fa8-a9c4-1c133a5fe58b
   configName: BugEnemy
-  maxHP: 10
+  maxHP: 40
   dame: 0
-  attackRange: 4
+  attackRange: 10
   attackSpeed: 0
   moveSpeed: 0
   aimToTarget: 1
@@ -42,14 +70,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 128afc1a-5642-486e-9334-6dd77d4fb30b
   configName: SpaceMan
-  maxHP: 10
+  maxHP: 40
   dame: 0
   attackRange: 10
   attackSpeed: 0
   moveSpeed: 0
-  aimToTarget: 0
-  idleLogic: 0
-  idleParams: 
+  aimToTarget: 1
+  idleLogic: 1
+  idleParams: 0.3
   moveLogic: 0
   moveParams: 
   attackLogic: 1
@@ -71,3 +99,4 @@ MonoBehaviour:
   enemyConfigs:
   - {fileID: -6678707429394965267}
   - {fileID: -4487655169605993160}
+  - {fileID: -8692357913099652105}

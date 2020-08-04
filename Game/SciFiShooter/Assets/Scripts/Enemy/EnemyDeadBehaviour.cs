@@ -45,7 +45,6 @@ public class EnemyDeadBehaviour : IBehaviour
 
         if (this.enemyController.navMeshAgent)
         {
-            this.enemyController.navMeshAgent.isStopped = true;
             this.enemyController.navMeshAgent.enabled = false;
         }
         this.enemyController.enemyRenderState.SetActiveHighLightFx(false, Color.red);

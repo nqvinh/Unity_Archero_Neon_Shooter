@@ -226,42 +226,49 @@ public class Map : MonoBehaviour
             for (int i = 0; i < dataLeng; i++)
             {
                 Vector3 worldPos = ConvertCellPosToWorld(row, col);
+
+                int tileId = currentMapDefine.Layers[v].Data[i] - enemyTileFirstGID;
+                if (tileId >= 0)
+                {
+                    string monsterId = enemyTile.Tiles[tileId].Image;
+                    monsterId = monsterId.Replace(".png", string.Empty);
+
+                    EnemyController enemyController = null;
+                    GameObject enemyPrefab = null;
+                    if (prefabCache.ContainsKey(monsterId))
+                    {
+                        enemyPrefab = prefabCache[monsterId];
+                    }
+                    else
+                    {
+                        enemyPrefab = await Addressables.LoadAssetAsync<GameObject>(monsterId).Task;
+                        prefabCache.Add(monsterId, enemyPrefab);
+                    }
+
+                    Debug.Assert(enemyPrefab != null, "Enemy Prefab null " + monsterId);
+
+                    enemyController = Instantiate(enemyPrefab).GetComponent<EnemyController>();
+                    enemyController.transform.position = worldPos;
+                    enemyController.gameObject.SetActive(false);
+                    enemyController.onDead += OnEnemyDead;
+                    currentEnemies[v].Add(enemyController);
+
+                }
+                col++;
+                if (col >= width)
+                {
+                    col = 0;
+                    row++;
+                }
+
+
                 if (isBossLayer)
                 {
                     //Implement Boss Data
                 }
                 else
                 {
-                    int tileId = currentMapDefine.Layers[v].Data[i] - enemyTileFirstGID;
-                    if (tileId >= 0)
-                    {
-                        string monsterId = enemyTile.Tiles[tileId].Image;
-                        monsterId = monsterId.Replace(".png", string.Empty);
-
-                        EnemyController enemyController = null;
-                        GameObject enemyPrefab = null;
-                        if (prefabCache.ContainsKey(monsterId))
-                        {
-                            enemyPrefab = prefabCache[monsterId];
-                        }
-                        else
-                        {
-                            enemyPrefab = await Addressables.LoadAssetAsync<GameObject>(monsterId).Task;
-                            prefabCache.Add(monsterId, enemyPrefab);
-                        }
-                        enemyController = Instantiate(enemyPrefab).GetComponent<EnemyController>();
-                        enemyController.transform.position = worldPos;
-                        enemyController.gameObject.SetActive(false);
-                        enemyController.onDead += OnEnemyDead;
-                        currentEnemies[v].Add(enemyController);
-
-                    }
-                    col++;
-                    if (col >= width)
-                    {
-                        col = 0;
-                        row++;
-                    }
+                   
                 }
             }
         }

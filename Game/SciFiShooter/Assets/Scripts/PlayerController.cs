@@ -34,6 +34,9 @@ public class PlayerController : MonoBehaviour
     private PlayerAnimationController animator;
 
     [SerializeField]
+    private Transform aimQuad;
+
+    [SerializeField]
     private float stepDistance = 0f;
 
     [SerializeField]
@@ -60,11 +63,19 @@ public class PlayerController : MonoBehaviour
     {
         poolObject.CreatePool(stepQuad, 10);
         poolBulletObject.CreatePool(baseBullePrefab, 100);
+        aimQuad.gameObject.SetActive(false);
     }
 
     private void Update()
     {
-      
+        if (focusingEnemy)
+        {
+            aimQuad.position = focusingEnemy.hitBox.transform.position - aimQuad.transform.forward*5;
+        }
+        else
+        {
+            aimQuad.gameObject.SetActive(false);
+        }
     }
 
     void FixedUpdate()
@@ -114,6 +125,7 @@ public class PlayerController : MonoBehaviour
         var nearestEnemy = focusingEnemy?focusingEnemy : Map.Instance.GetNearestEnemy(this.transform.position);
         if (nearestEnemy != null)
         {
+            aimQuad.gameObject.SetActive(true);
             focusingEnemy = nearestEnemy;
             bulletMuzzleFx.Play();
             this.transform.LookAt(nearestEnemy.hitBox.transform);
@@ -124,13 +136,14 @@ public class PlayerController : MonoBehaviour
             Vector3 dir = nearestEnemy.hitBox.transform.position - bulletEmitter.position;
             bullet.Shot(this.bulletEmitter.position, dir.normalized);
             animator.Shooting = true;
-
             focusingEnemy.enemyRenderState.SetActiveHighLightFx(true,Color.red);
         }
         else
         {
             animator.Shooting = false;
             animator.Running = false;
+            aimQuad.gameObject.SetActive(false);
+
         }
         lastShootTimePoint = Time.time;
     }
