@@ -42,6 +42,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     Transform bulletEmitter;
 
+    [SerializeField]
+    PlayerConfig config;
+
     Vector3 offsetStep = new Vector3(0, 0.02f, 0);
 
 

@@ -117,7 +117,7 @@ MonoBehaviour:
   hitBox: {fileID: 5865485076460118226}
   target: {fileID: 0}
   enemyConfigRef:
-    enemyConfigId: BugEnemy
+    enemyConfigId: BugEnemy99
     refEnemyConfig: {fileID: 0}
   navMeshAgent: {fileID: 1395834101136164386}
 --- !u!114 &100701674905276369

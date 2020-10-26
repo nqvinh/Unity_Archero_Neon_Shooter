@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:ListView focusable="True" name="Container" class="listView" style="height: auto;">
+        <Style src="/Assets/UI/Uss/BasicListView.uss" />
+    </ui:ListView>
+</ui:UXML>

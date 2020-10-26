@@ -7,4 +7,8 @@ public class GameConfig : SingletonScriptObject<GameConfig>
 {
     [SerializeField]
     public List<EnemyConfig> enemyConfigs = new List<EnemyConfig>();
+
+
+    //Warning using ScriptableAsset.CreateInstance
+    public PlayerConfig playerConfig = null;
 }

@@ -1,4 +1,4 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
-    <ui:VisualElement name="TabNavigator" style="flex-direction: row;" />
+    <ui:VisualElement name="TabNavigator" style="flex-direction: row; height: auto; min-height: 40px;" />
     <ui:VisualElement name="TabContent" />
 </ui:UXML>

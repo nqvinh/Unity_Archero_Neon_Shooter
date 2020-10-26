@@ -2278,6 +2278,7 @@ MonoBehaviour:
   aimQuad: {fileID: 1642927470}
   stepDistance: 0.1
   bulletEmitter: {fileID: 594768792}
+  config: {fileID: 0}
   HitBox: {fileID: 2061722891}
 --- !u!1 &2138677391
 GameObject:

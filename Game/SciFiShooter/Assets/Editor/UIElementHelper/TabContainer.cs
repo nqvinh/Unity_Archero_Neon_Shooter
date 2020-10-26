@@ -32,7 +32,8 @@ public class TabContainer:BaseVisualElementContainer
             currentTab = content;
             tabContent.Add(content.rootElement);
         }
-            
+       
+
 
         Button button = new Button();
         button.name = name;
@@ -54,6 +55,10 @@ public class TabContainer:BaseVisualElementContainer
     private void OnSwitchTab(string tabName)
     {
         Debug.Log("On Switch To Tab" + tabName);
+        tabContent.Remove(currentTab.rootElement);
         currentTab = tab[tabName];
+        tabContent.Add(currentTab.rootElement);
+        
+        //currentTab.rootElement.visible = true;
     }
 }

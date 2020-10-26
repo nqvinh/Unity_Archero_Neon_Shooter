@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:ListView focusable="True" name="Container" class="listView" style="height: auto; min-width: auto; min-height: 400px;">
+        <Style src="/Assets/UI/Uss/BasicListView.uss" />
+    </ui:ListView>
+    <ui:VisualElement name="ActionBar" style="flex-direction: row; height: auto; min-height: 30px;">
+        <Style src="/Assets/UI/Uss/BasicListView.uss" />
+        <ui:Button text="Add" name="Add" />
+    </ui:VisualElement>
+</ui:UXML>

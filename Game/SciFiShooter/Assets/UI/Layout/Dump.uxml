@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:ListView focusable="True" class="listView" style="height: auto;">
+        <Style src="/Assets/UI/Uss/BasicListView.uss" />
+        <uie:FloatField label="PlayerSpeed" value="42.2" name="PlayerSpeed" />
+        <uie:IntegerField label="PlayerBaseHP" value="42" name="PlayerBaseHp" />
+    </ui:ListView>
+</ui:UXML>
